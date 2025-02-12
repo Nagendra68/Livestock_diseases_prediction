@@ -19,7 +19,7 @@ except Exception as e:
     model = None
 
 # Load the data
-DATA_PATH = os.path.join('..','dataset', "animal_disease_dataset.csv")
+DATA_PATH = os.path.join('dataset', "animal_disease_dataset.csv")
 data = pd.read_csv(DATA_PATH)
 
 # Get animal name from the dataset to display on the form

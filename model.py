@@ -6,7 +6,7 @@ import pickle
 import os
 
 # Define the path to the dataset
-DATA_PATH = os.path.join('..','dataset', "animal_disease_dataset.csv")
+DATA_PATH = os.path.join('dataset', "animal_disease_dataset.csv")
 
 # Load the data
 data = pd.read_csv(DATA_PATH)
