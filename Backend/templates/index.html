@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestock Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Livestock Disease Prediction</h1>
+        <form id="prediction-form">
+            <label for="animal">Animal:</label>
+            <select id="animal" name="animal">
+                {% for animal_id, animal_name in animal_mapping.items() %}
+                    <option value="{{ animal_id }}">{{ animal_name }}</option>
+                {% endfor %}
+            </select>
+            <br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br>
+
+            <label for="temperature">Temperature:</label>
+            <input type="number" step="0.1" id="temperature" name="temperature" required><br>
+
+            <label>Symptoms:</label><br>
+            <input type="checkbox" id="blisters_on_gums" name="blisters_on_gums" value="1">
+            <label for="blisters_on_gums">Blisters on Gums</label><br>
+
+            <input type="checkbox" id="blisters_on_hooves" name="blisters_on_hooves" value="1">
+            <label for="blisters_on_hooves">Blisters on Hooves</label><br>
+
+            <input type="checkbox" id="blisters_on_mouth" name="blisters_on_mouth" value="1">
+            <label for="blisters_on_mouth">Blisters on Mouth</label><br>
+
+            <input type="checkbox" id="blisters_on_tongue" name="blisters_on_tongue" value="1">
+            <label for="blisters_on_tongue">Blisters on Tongue</label><br>
+
+            <input type="checkbox" id="chest_discomfort" name="chest_discomfort" value="1">
+            <label for="chest_discomfort">Chest Discomfort</label><br>
+
+            <input type="checkbox" id="chills" name="chills" value="1">
+            <label for="chills">Chills</label><br>
+
+            <input type="checkbox" id="crackling_sound" name="crackling_sound" value="1">
+            <label for="crackling_sound">Crackling Sound</label><br>
+
+            <input type="checkbox" id="depression" name="depression" value="1">
+            <label for="depression">Depression</label><br>
+
+            <input type="checkbox" id="difficulty_walking" name="difficulty_walking" value="1">
+            <label for="difficulty_walking">Difficulty Walking</label><br>
+
+            <input type="checkbox" id="fatigue" name="fatigue" value="1">
+            <label for="fatigue">Fatigue</label><br>
+
+            <input type="checkbox" id="lameness" name="lameness" value="1">
+            <label for="lameness">Lameness</label><br>
+
+            <input type="checkbox" id="loss_of_appetite" name="loss_of_appetite" value="1">
+            <label for="loss_of_appetite">Loss of Appetite</label><br>
+
+            <input type="checkbox" id="painless_lumps" name="painless_lumps" value="1">
+            <label for="painless_lumps">Painless Lumps</label><br>
+
+            <input type="checkbox" id="shortness_of_breath" name="shortness_of_breath" value="1">
+            <label for="shortness_of_breath">Shortness of Breath</label><br>
+
+            <input type="checkbox" id="sores_on_gums" name="sores_on_gums" value="1">
+            <label for="sores_on_gums">Sores on Gums</label><br>
+
+            <input type="checkbox" id="sores_on_hooves" name="sores_on_hooves" value="1">
+            <label for="sores_on_hooves">Sores on Hooves</label><br>
+
+            <input type="checkbox" id="sores_on_mouth" name="sores_on_mouth" value="1">
+            <label for="sores_on_mouth">Sores on Mouth</label><br>
+
+            <input type="checkbox" id="sores_on_tongue" name="sores_on_tongue" value="1">
+            <label for="sores_on_tongue">Sores on Tongue</label><br>
+
+            <input type="checkbox" id="sweats" name="sweats" value="1">
+            <label for="sweats">Sweats</label><br>
+
+            <input type="checkbox" id="swelling_in_abdomen" name="swelling_in_abdomen" value="1">
+            <label for="swelling_in_abdomen">Swelling in Abdomen</label><br>
+
+            <input type="checkbox" id="swelling_in_extremities" name="swelling_in_extremities" value="1">
+            <label for="swelling_in_extremities">Swelling in Extremities</label><br>
+
+            <input type="checkbox" id="swelling_in_limb" name="swelling_in_limb" value="1">
+            <label for="swelling_in_limb">Swelling in Limb</label><br>
+
+            <input type="checkbox" id="swelling_in_muscle" name="swelling_in_muscle" value="1">
+            <label for="swelling_in_muscle">Swelling in Muscle</label><br>
+
+            <input type="checkbox" id="swelling_in_neck" name="swelling_in_neck" value="1">
+            <label for="swelling_in_neck">Swelling in Neck</label><br>
+
+            <button type="submit">Predict Disease</button>
+        </form>
+        <div id="prediction"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
